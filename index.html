@@ -12,7 +12,7 @@
   </title>
   
   <!-- Start of Talkdesk Code -->
-    <script>
+  <script>
       var webchat;
       (function(window, document, node, props, configs) {
         if (window.TalkdeskChatSDK) {
@@ -36,11 +36,11 @@
           webchat.init(configs);
           
           /*
-           * TRECHO ATIVADO: 
-           * Envia a variável "country": "ie" para o Talkdesk Navigator
+           * TRECHO ATIVADO PARA O REINO UNIDO (UK): 
+           * Envia a variável "country": "uk" para o Talkdesk Navigator e n8n
            */
            function setContext() {
-             webchat.setContextParam({ "country": "ie" });
+             webchat.setContextParam({ "country": "uk" });
            }
            
            // Envia o dado quando a conversa é iniciada
@@ -58,8 +58,8 @@
         document,
         "tdWebchat",
         { 
-          touchpointId: "6caa9cad9a67497890518b54b07ec7a5", 
-          accountId: "641238fb36046f5b1a152af5", /* <-- Seu Account ID inserido aqui! */
+          touchpointId: "32b4cc585b0244b8a33997d97530a61b", 
+          accountId: "641238fb36046f5b1a152af5", /* <-- O seu Account ID real */
           region: "td-eu-1" 
         },
         { enableValidation: false, enableEmoji: true, enableUserInput: true, enableAttachments: true }
