@@ -34,28 +34,34 @@
         script.onload = function() {
           webchat = TalkdeskChatSDK(node, props);
           webchat.init(configs);
+          
           /*
-           * Send custom data from your website to TalkDesk!
-           * If you would like to do it, you need to remove the following commented code and
-           * modify the webchat.setContextParam parameters to pass in the data you need.
+           * TRECHO ATIVADO: 
+           * Envia a variável "country": "ie" para o Talkdesk Navigator
            */
-           /*function setContext() {
-             webchat.setContextParam({ "var1": "value1", "var2": "value2", "var3": 100 })
+           function setContext() {
+             webchat.setContextParam({ "country": "ie" });
            }
-           // Send data when the chat conversation is initiated
+           
+           // Envia o dado quando a conversa é iniciada
            webchat.onConversationStart = function() {
-             setContext()
-           }
-           // Send data when the chat widget is open
+             setContext();
+           };
+           
+           // Envia o dado quando o widget de chat é aberto
            webchat.onOpenWebchat = function() {
-             setContext()
-           }*/
+             setContext();
+           };
         };
       })(
         window,
         document,
         "tdWebchat",
-        { touchpointId: "32b4cc585b0244b8a33997d97530a61b", accountId: "", region: "td-eu-1" },
+        { 
+          touchpointId: "6caa9cad9a67497890518b54b07ec7a5", 
+          accountId: "641238fb36046f5b1a152af5", /* <-- Seu Account ID inserido aqui! */
+          region: "td-eu-1" 
+        },
         { enableValidation: false, enableEmoji: true, enableUserInput: true, enableAttachments: true }
       );
     </script>
